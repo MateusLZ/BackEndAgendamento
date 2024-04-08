@@ -21,7 +21,7 @@ public class SecurityConfig {
     @Autowired
     SecurityFilter securityFilter;
     
-    @Bean
+    @Bean 
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         return httpSecurity
             .csrf(csrf -> csrf.disable())
@@ -30,7 +30,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/auth/registrar").permitAll()
                 .requestMatchers(HttpMethod.POST, "/produtos").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.POST, "/upload-image").permitAll() // 
+                .requestMatchers(HttpMethod.POST, "/upload-image").permitAll()
                 .anyRequest().authenticated()
                 )
                 

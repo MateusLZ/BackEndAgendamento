@@ -8,13 +8,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "produtos")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProdutoModelo {
     
     
@@ -27,6 +31,13 @@ public class ProdutoModelo {
     private String nomeImagem;
 
     public static final int MAX_PRODUTOS = 6;
+
+    public ProdutoModelo(int codigo, String nome, String descricao, String nomeImagem) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.nomeImagem = nomeImagem;
+    }
 
     public static boolean isLimiteExcedido() {
         System.out.println("Verificando se o limite de produtos foi excedido...");
@@ -54,5 +65,6 @@ public class ProdutoModelo {
             }
         }
     }
+
     
 }

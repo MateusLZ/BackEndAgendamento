@@ -49,6 +49,7 @@ public class AdministradorServico {
         boolean isAdmin = isUserAdmin(token);
         
         Map<String, Object> userData = new HashMap<>();
+        userData.put("userId", user.getId());
         userData.put("userName", user.getUserName());
         userData.put("name", user.getUsername());
         userData.put("isAdmin", isAdmin);

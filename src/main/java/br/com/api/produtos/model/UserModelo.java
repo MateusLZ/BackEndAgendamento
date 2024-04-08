@@ -1,5 +1,6 @@
 package br.com.api.produtos.model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -37,9 +38,9 @@ public class UserModelo implements UserDetails {
 
     private UserRole role;
 
-    public  UserModelo(String login, String userName, String password, UserRole role){
+    public UserModelo(String login, String userName, String password, UserRole role){
+        this.login = login;
         this.userName = userName;
-        this.login =login;
         this.password = password;
         this.role = role;
     }
@@ -80,4 +81,17 @@ public Collection<? extends GrantedAuthority> getAuthorities() {
   else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
 }
 
+// @Converter(autoApply = true)
+// public class UUIDAttributeConverter implements AttributeConverter<UUID, String> {
+
+//     @Override
+//     public String convertToDatabaseColumn(UUID attribute) {
+//         return attribute.toString();
+//     }
+
+//     @Override
+//     public UUID convertToEntityAttribute(String dbData) {
+//         return UUID.fromString(dbData);
+//     }
+// }
 }
