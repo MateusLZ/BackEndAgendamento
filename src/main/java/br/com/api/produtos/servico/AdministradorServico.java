@@ -1,6 +1,7 @@
 package br.com.api.produtos.servico;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,16 +53,18 @@ public class AdministradorServico {
         userData.put("userId", user.getId());
         userData.put("userName", user.getUserName());
         userData.put("name", user.getUsername());
+        userData.put("Role", user.getRole());
         userData.put("isAdmin", isAdmin);
 
         return userData;
     }
 
     // Método para listar todos os administradores
-    public Iterable<AdministradorModelo> listar() {
-        return administradorRepositorio.findAll();
+    public List<UserModelo> listar() {
+        return userRepositorio.findAll();
     }
 
+    
     // Método para cadastrar ou alterar administradores
     public ResponseEntity<?> cadastrarAlterar(AdministradorModelo administrador, String acao) {
         if (administrador.getNome().equals("")) {
@@ -85,4 +88,9 @@ public class AdministradorServico {
         rm.setMensagem("O administrador foi removido com sucesso!");
         return new ResponseEntity<RespostaModelo>(rm, HttpStatus.OK);
     }
+
+    public List<UserModelo> listarPorRole(UserRole role) {
+        return userRepositorio.findByRole(role);
+    }
+    
 }

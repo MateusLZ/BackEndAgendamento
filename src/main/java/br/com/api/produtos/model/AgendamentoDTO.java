@@ -1,42 +1,23 @@
 package br.com.api.produtos.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class AgendamentoDTO {
     private String usuarioId;
     private Long produtoId;
     private Long horarioId;
-
-    // Construtores, getters e setters
+    // private String funcionarioId;
 
     public AgendamentoDTO() {
     }
 
-    public AgendamentoDTO(String usuarioId, Long produtoId, Long horarioId) {
+    public AgendamentoDTO(String usuarioId, Long produtoId, Long horarioId, String funcionarioId) {
         this.usuarioId = usuarioId;
         this.produtoId = produtoId;
         this.horarioId = horarioId;
-    }
-
-    public String getUsuarioId() {
-        return usuarioId;
-    }
-
-    public void setUsuarioId(String usuarioId) {
-        this.usuarioId = usuarioId;
-    }
-
-    public Long getProdutoId() {
-        return produtoId;
-    }
-
-    public void setProdutoId(Long produtoId) {
-        this.produtoId = produtoId;
-    }
-
-    public Long getHorarioId() {
-        return horarioId;
-    }
-
-    public void setHorarioId(Long horarioId) {
-        this.horarioId = horarioId;
+        // this.funcionarioId = funcionarioId;
     }
 }

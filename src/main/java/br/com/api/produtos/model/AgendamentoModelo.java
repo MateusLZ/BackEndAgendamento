@@ -34,6 +34,10 @@ public class AgendamentoModelo {
     @JoinColumn(name = "produto_id")
     private ProdutoModelo produto;
 
+    // @ManyToOne
+    // @JoinColumn(name = "funcionario_id", referencedColumnName = "id")
+    // private UserModelo funcionario;
+
     private String dataAgendamento;
 
 

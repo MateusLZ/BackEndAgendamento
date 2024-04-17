@@ -1,18 +1,24 @@
 package br.com.api.produtos.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import br.com.api.produtos.model.UserModelo;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+ 
 @Entity
 @Table(name = "produtos")
 @Getter
@@ -30,9 +36,14 @@ public class ProdutoModelo {
     private String descricao;
     private String nomeImagem;
 
+    @ManyToMany(mappedBy = "produtos")
+    @JsonIgnoreProperties("produtos")
+   private List<UserModelo> usuarios;
+
+
     public static final int MAX_PRODUTOS = 6;
 
-    public ProdutoModelo(int codigo, String nome, String descricao, String nomeImagem) {
+    public ProdutoModelo(int codigo, String nome , String descricao, String nomeImagem) {
         this.codigo = codigo;
         this.nome = nome;
         this.descricao = descricao;
@@ -65,6 +76,11 @@ public class ProdutoModelo {
             }
         }
     }
+
+    public void setUsuarios(List<UserModelo> usuarios) {
+        this.usuarios = usuarios;
+    }
+    
 
     
 }

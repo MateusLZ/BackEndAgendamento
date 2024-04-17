@@ -1,5 +1,6 @@
 package br.com.api.produtos.controle;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import br.com.api.produtos.model.AdministradorModelo;
 import br.com.api.produtos.model.RespostaModelo;
+import br.com.api.produtos.model.UserModelo;
+import br.com.api.produtos.model.UserRole;
 import br.com.api.produtos.servico.AdministradorServico;
 
 @RestController
@@ -34,9 +37,17 @@ public class AdministradorControle {
     }
 
     @GetMapping("/listar")
-    public Iterable<AdministradorModelo> listar() {
+    public List<UserModelo> listar() {
         return administradorServico.listar();
     }
+
+    @GetMapping("/listarPorRole/{role}")
+public ResponseEntity<List<UserModelo>> listarPorRole(@PathVariable String role) {
+    UserRole userRole = UserRole.valueOf(role.toUpperCase()); // Convertendo a string da role para enum
+    List<UserModelo> usuariosPorRole = administradorServico.listarPorRole(userRole);
+    return ResponseEntity.ok(usuariosPorRole);
+}
+
 
     @GetMapping("/")
     public String rota() {

@@ -16,9 +16,9 @@ public class AgendamentoServico {
     @Autowired
     private AgendamentoRepositorio agendamentoRepositorio;
 
-    public AgendamentoModelo cadastrarAgendamento(AgendamentoModelo agendamento) {
-        return agendamentoRepositorio.save(agendamento);
-    }
+        public AgendamentoModelo cadastrarAgendamento(AgendamentoModelo agendamento) {
+            return agendamentoRepositorio.save(agendamento);
+        }
 
     public List<AgendamentoModelo> listarAgendamentosPorUsuario(String idUsuario) {
         return agendamentoRepositorio.findByUsuarioId(idUsuario); 
