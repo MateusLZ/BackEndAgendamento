@@ -1,11 +1,11 @@
-package br.com.api.produtos.repositorio;
+// package br.com.api.produtos.repositorio;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+// import org.springframework.data.repository.CrudRepository;
+// import org.springframework.stereotype.Repository;
 
-import br.com.api.produtos.model.AdministradorModelo;
+// import br.com.api.produtos.model.AdministradorModelo;
 
-@Repository
-public interface AdministradorRepositorio extends CrudRepository<AdministradorModelo, Long> {
+// @Repository
+// public interface AdministradorRepositorio extends CrudRepository<AdministradorModelo, Long> {
     
-}
+// }

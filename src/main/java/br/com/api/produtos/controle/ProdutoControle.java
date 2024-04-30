@@ -6,6 +6,7 @@ import br.com.api.produtos.model.CadastrarProdutoRequest;
 import br.com.api.produtos.model.ProdutoModelo;
 import br.com.api.produtos.model.RespostaModelo;
 import br.com.api.produtos.servico.ProdutoServico;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -35,7 +36,13 @@ public class ProdutoControle {
     public ResponseEntity<RespostaModelo> remover(@PathVariable long codigo){
         return ps.remover(codigo);
     }
-
+    
+    @Transactional
+    @DeleteMapping("/remover/{productId}/usuarios")
+    public ResponseEntity<?> removerProdutoDoUsuario(@PathVariable String productId, @RequestBody List<String> userIds) {
+        return ps.removerProdutoDoUsuario(productId, userIds);
+    }
+    
     @PutMapping("/editar/{id}")
 public ResponseEntity<?> editarProduto(@PathVariable long id, @RequestBody ProdutoModelo novoProduto) {
     return ps.editarProduto(id, novoProduto);

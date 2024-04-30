@@ -50,7 +50,7 @@ public class UserModelo implements UserDetails {
                 joinColumns = @JoinColumn(name="users_id"),
                 inverseJoinColumns = @JoinColumn(name="produtos_id")
     )
-    @JsonIgnoreProperties("usuarios")
+    @JsonIgnoreProperties("usuarios") 
     private List<ProdutoModelo> produtos;
 
 
@@ -103,5 +103,11 @@ public class UserModelo implements UserDetails {
         }
     }
     
+    // Dentro da classe UserModelo
+public void removerProduto(ProdutoModelo produto) {
+    produtos.remove(produto);
+    produto.getUsuarios().remove(this);
+}
+
 
 }

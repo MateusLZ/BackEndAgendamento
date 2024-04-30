@@ -1,7 +1,6 @@
 package br.com.api.produtos.servico;
 
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -10,7 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Service; 
+import org.springframework.stereotype.Service;
+import jakarta.persistence.EntityManager;
 
 import br.com.api.produtos.model.ProdutoModelo;
 import br.com.api.produtos.model.RespostaModelo;
@@ -31,21 +31,20 @@ public class ProdutoServico {
     @Autowired
     private UserRepositorio ur;
 
+    @Autowired
+    private EntityManager em;
 
-    //Método para listar todos os produtos
+
     public Iterable<ProdutoModelo> listar(){
         Iterable<ProdutoModelo> produtos = pr.findAll();
         
-        // Inicializar a relação muitos para muitos explicitamente
         for (ProdutoModelo produto : produtos) {
-            produto.getUsuarios().size(); // Isso força a inicialização da relação
+            produto.getUsuarios().size(); 
         }
 
         return produtos;
     }
     
-    // No seu serviço ProdutoServico 
-
 public ResponseEntity<?> editarProduto(long codigo, ProdutoModelo novoProduto) {
     Optional<ProdutoModelo> produtoOptional = pr.findById(codigo);
 
@@ -56,7 +55,6 @@ public ResponseEntity<?> editarProduto(long codigo, ProdutoModelo novoProduto) {
 
         return new ResponseEntity<>(pr.save(produtoExistente), HttpStatus.OK);
     } else {
-        // Produto não encontrado
         return new ResponseEntity<>("Produto não encontrado", HttpStatus.NOT_FOUND);
     }
 }
@@ -66,9 +64,7 @@ public ResponseEntity<?> cadastrarAlterar(ProdutoModelo pm, List<String> userIds
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     if (authentication != null && authentication.isAuthenticated()) {
         if (authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))) {
-            // Usuário é administrador, pode cadastrar produtos
 
-            // Verificar se o limite de produtos foi excedido
             if (ProdutoModelo.isLimiteExcedido()) {
                 rm.setMensagem("Limite de produtos atingido. Não é possível cadastrar mais produtos.");
                 return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
@@ -81,13 +77,10 @@ public ResponseEntity<?> cadastrarAlterar(ProdutoModelo pm, List<String> userIds
                 rm.setMensagem("A descrição do produto é obrigatória");
                 return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
             } else {
-                // Buscar usuários com base nos IDs fornecidos
                 List<UserModelo> usuarios = ur.findAllById(userIds);
 
-                // Associar os usuários ao produto
                 pm.setUsuarios(usuarios);
 
-                // Associar o produto aos usuários
                 for (UserModelo usuario : usuarios) {
                     usuario.getProdutos().add(pm);
                 }
@@ -99,18 +92,15 @@ public ResponseEntity<?> cadastrarAlterar(ProdutoModelo pm, List<String> userIds
                 }
             }
         } else {
-            // Usuário não é administrador, não pode cadastrar produtos
             rm.setMensagem("Você não tem permissão para cadastrar produtos!");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.FORBIDDEN);
         }
     } else {
-        // Usuário não está autenticado, retorna status UNAUTHORIZED
         rm.setMensagem("Você precisa estar autenticado para cadastrar produtos!");
         return new ResponseEntity<RespostaModelo>(rm, HttpStatus.UNAUTHORIZED);
     }
 }
 
-    //Método para remover produtos
     public ResponseEntity<RespostaModelo> remover(long codigo){
 
         pr.deleteById(codigo);
@@ -118,6 +108,36 @@ public ResponseEntity<?> cadastrarAlterar(ProdutoModelo pm, List<String> userIds
         rm.setMensagem("O produto foi removido com sucesso!");
         return new ResponseEntity<RespostaModelo>(rm,HttpStatus.OK);
     }
+    public ResponseEntity<?> removerProdutoDoUsuario(String productId, List<String> userIds) {
+        try {
+            Optional<ProdutoModelo> produtoOptional = pr.findById(Long.parseLong(productId));
+            if (!produtoOptional.isPresent()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Produto não encontrado.");
+            }
+            ProdutoModelo produto = produtoOptional.get();
+    
+            for (String userId : userIds) {
+                Optional<UserModelo> userOptional = ur.findById(userId);
+                if (userOptional.isPresent()) {
+                    UserModelo usuario = userOptional.get();
+                    produto.removerUsuario(usuario);
+                    usuario.removerProduto(produto);
+                    em.merge(usuario);
+                } else {
+                    continue;
+                }
+            }
+    
+    
+            return ResponseEntity.ok("Associações do produto removidas com sucesso.");
+        } catch (NumberFormatException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("ID do produto inválido.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao remover associações do produto: " + e.getMessage());
+        }
+    }
+    
+
 }
 
 

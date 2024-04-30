@@ -3,8 +3,6 @@ package br.com.api.produtos.model;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import br.com.api.produtos.model.UserModelo;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -36,9 +34,10 @@ public class ProdutoModelo {
     private String descricao;
     private String nomeImagem;
 
+    
     @ManyToMany(mappedBy = "produtos")
     @JsonIgnoreProperties("produtos")
-   private List<UserModelo> usuarios;
+    private List<UserModelo> usuarios;
 
 
     public static final int MAX_PRODUTOS = 6;
@@ -81,6 +80,11 @@ public class ProdutoModelo {
         this.usuarios = usuarios;
     }
     
+    // Dentro da classe ProdutoModelo
+public void removerUsuario(UserModelo usuario) {
+    usuarios.remove(usuario);
+    usuario.getProdutos().remove(this);
+}
 
     
 }
