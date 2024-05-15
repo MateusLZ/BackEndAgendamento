@@ -33,7 +33,6 @@ public class AgendamentoControle {
     @PostMapping("/cadastrar")
     public ResponseEntity<AgendamentoModelo> cadastrarAgendamento(@RequestBody AgendamentoModelo agendamento) {
 
-        // System.out.println("ID do funcionário: " + agendamento.getFuncionario().getId());
         HorarioModelo horario = horarioServico.buscarPorId(agendamento.getHorario().getId());
         AgendamentoModelo agendamentoCadastrado = agendamentoServico.cadastrarAgendamento(agendamento);
         agendamento.setHorario(horario);
@@ -53,8 +52,6 @@ public class AgendamentoControle {
         List<AgendamentoModelo> agendamentos = agendamentoServico.listarAgendamentosPorUsuario(idUsuario);
         return ResponseEntity.ok(agendamentos);
     }
-    
-
 
     @DeleteMapping("/remover/{id}")
     public ResponseEntity<Void> removerAgendamento(@PathVariable Long id) {

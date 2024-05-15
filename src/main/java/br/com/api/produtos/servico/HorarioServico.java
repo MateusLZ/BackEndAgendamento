@@ -20,7 +20,6 @@ public class HorarioServico {
     public HorarioModelo cadastrarHorario(HorarioModelo horario) {
         return hr.save(horario);
     }
-
     
     public List<HorarioModelo> listarHorarios() {
         return (List<HorarioModelo>) hr.findAll();
@@ -35,10 +34,9 @@ public class HorarioServico {
         if (optionalHorario.isPresent()) {
             HorarioModelo horarioExistente = optionalHorario.get();
             horarioExistente.setDataHora(horario.getDataHora());
-            // Você pode adicionar mais atributos para edição conforme necessário
             return hr.save(horarioExistente);
         }
-        return null; // Ou lança uma exceção, dependendo do comportamento desejado
+        return null; 
     }
     public HorarioModelo buscarPorId(Long id) {
         return hr.findById(id)

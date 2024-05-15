@@ -43,6 +43,9 @@ public class UserModelo implements UserDetails {
 
     private UserRole role;
 
+    private boolean isActive;
+
+    private String token;
 
     @ManyToMany
     @JoinTable(
@@ -55,11 +58,13 @@ public class UserModelo implements UserDetails {
 
 
 
-    public UserModelo(String login, String userName, String password, UserRole role){
+    public UserModelo(String login, String userName, String password, UserRole role, boolean isActive, String token){
         this.login = login;
         this.userName = userName;
         this.password = password;
         this.role = role;
+        this.isActive = isActive;
+        this.token = token;
     }
 
     @Override
@@ -90,6 +95,10 @@ public class UserModelo implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
     }
 
     @Override

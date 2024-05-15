@@ -9,7 +9,6 @@ public class AgendamentoDTO {
     private String usuarioId;
     private Long produtoId;
     private Long horarioId;
-    // private String funcionarioId;
 
     public AgendamentoDTO() {
     }

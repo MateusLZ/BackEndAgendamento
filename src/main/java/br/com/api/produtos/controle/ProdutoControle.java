@@ -59,9 +59,6 @@ public ResponseEntity<?> cadastrarProduto(@RequestBody CadastrarProdutoRequest r
     }
 }
 
-
-    
-
     @GetMapping("/listar")
     public Iterable<ProdutoModelo> listar() {
         return ps.listar();
