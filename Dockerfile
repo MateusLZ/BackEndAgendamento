@@ -2,8 +2,10 @@
 FROM ubuntu:latest AS build
 
 RUN apt-get update && \
+    apt-get clean &&\
     apt-get install -y openjdk-17-jdk maven && \
     apt-get clean
+
 
 WORKDIR /app
 COPY . .
