@@ -26,12 +26,7 @@ public class AdministradorControle {
         return administradorServico.listar();
     }
 
-//     @GetMapping("/listarPorRole/{role}")
-// public ResponseEntity<List<UserModelo>> listarPorRole(@PathVariable String role) {
-//     UserRole userRole = UserRole.valueOf(role.toUpperCase()); 
-//     List<UserModelo> usuariosPorRole = administradorServico.listarPorRole(userRole);
-//     return ResponseEntity.ok(usuariosPorRole);
-// }
+
 @GetMapping("/listarPorRole/{role}")
 public ResponseEntity<Page<UserModelo>> listarPorRole(@PathVariable String role,
                                                        @RequestParam(defaultValue = "0") int page,

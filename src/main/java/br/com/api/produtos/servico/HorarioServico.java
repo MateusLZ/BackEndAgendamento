@@ -25,6 +25,10 @@ public class HorarioServico {
         return (List<HorarioModelo>) hr.findAll();
     }
 
+    public List<HorarioModelo> listarHorariosAtivos() {
+        return hr.findByAtivo(true);
+    }
+
     public void excluirHorario(Long id) {
         hr.deleteById(id);
     }
@@ -37,6 +41,16 @@ public class HorarioServico {
             return hr.save(horarioExistente);
         }
         return null; 
+    }
+
+    public HorarioModelo atualizarStatusAtivo(Long id, boolean ativo) {
+        Optional<HorarioModelo> optionalHorario = hr.findById(id);
+        if (optionalHorario.isPresent()) {
+            HorarioModelo horarioExistente = optionalHorario.get();
+            horarioExistente.setAtivo(ativo);
+            return hr.save(horarioExistente);
+        }
+        return null;
     }
     public HorarioModelo buscarPorId(Long id) {
         return hr.findById(id)

@@ -21,6 +21,7 @@ public class HorarioModelo {
 
     private LocalTime dataHora;
 
+    private boolean ativo;
 
     
 }

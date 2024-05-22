@@ -36,6 +36,26 @@ public class HorarioControle {
         }
     }
 
+    @PutMapping("/ativar/{id}")
+    public ResponseEntity<HorarioModelo> ativarHorario(@PathVariable Long id) {
+        HorarioModelo horarioAtivado = hs.atualizarStatusAtivo(id, true);
+        if (horarioAtivado != null) {
+            return ResponseEntity.ok(horarioAtivado);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PutMapping("/desativar/{id}")
+    public ResponseEntity<HorarioModelo> desativarHorario(@PathVariable Long id) {
+        HorarioModelo horarioDesativado = hs.atualizarStatusAtivo(id, false);
+        if (horarioDesativado != null) {
+            return ResponseEntity.ok(horarioDesativado);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @PostMapping("/cadastrar")
     public ResponseEntity<HorarioModelo> cadastrarHorario(@RequestBody HorarioModelo horario) {
         HorarioModelo horarioCadastrado = hs.cadastrarHorario(horario);
@@ -47,6 +67,13 @@ public class HorarioControle {
         List<HorarioModelo> horarios = hs.listarHorarios();
         return ResponseEntity.ok(horarios);
     }
+
+    @GetMapping("/ativos")
+    public ResponseEntity<List<HorarioModelo>> listarHorariosAtivos() {
+        List<HorarioModelo> horariosAtivos = hs.listarHorariosAtivos();
+        return ResponseEntity.ok(horariosAtivos);
+    }
+
 
     @GetMapping("/")
     public String rota() {
