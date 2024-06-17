@@ -43,6 +43,7 @@ public class AdministradorServico {
         userData.put("Role", user.getRole());
         userData.put("isAdmin", isAdmin);
         userData.put("is_active", user.isActive());
+        userData.put("phone", user.getPhone());
 
         return userData;
     }

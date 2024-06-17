@@ -3,6 +3,8 @@ package br.com.api.produtos.model;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -25,13 +27,17 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ProdutoModelo {
     
-    
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long codigo;
+    
+    @Column(nullable = false)
     private String nome;
+
+    @Column(nullable = false)
     private String descricao;
+
+    @Column(nullable = false)
     private String nomeImagem;
 
     

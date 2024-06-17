@@ -44,9 +44,16 @@ public class ProdutoControle {
     }
     
     @PutMapping("/editar/{id}")
-public ResponseEntity<?> editarProduto(@PathVariable long id, @RequestBody ProdutoModelo novoProduto) {
-    return ps.editarProduto(id, novoProduto);
-}
+    public ResponseEntity<?> editarProduto(@PathVariable long id, @RequestBody ProdutoModelo novoProduto) {
+        System.out.println("Recebido do frontend: " + novoProduto);  // Loga o objeto recebido
+        System.out.println("Nome: " + novoProduto.getNome());
+        System.out.println("Descrição: " + novoProduto.getDescricao());
+        if (novoProduto.getUsuarios() != null) {
+            System.out.println("Usuários: ");
+            novoProduto.getUsuarios().forEach(usuario -> System.out.println("ID: " + usuario.getId()));
+        }
+        return ps.editarProduto(id, novoProduto);
+    }
 
 @PostMapping("/cadastrar")
 public ResponseEntity<?> cadastrarProduto(@RequestBody CadastrarProdutoRequest request) {
@@ -70,5 +77,6 @@ public ResponseEntity<?> cadastrarProduto(@RequestBody CadastrarProdutoRequest r
         return "API de produtos funcionando";
     }
 
+    
    
 }

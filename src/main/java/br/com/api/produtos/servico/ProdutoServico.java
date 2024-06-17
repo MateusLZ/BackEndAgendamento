@@ -3,6 +3,7 @@ package br.com.api.produtos.servico;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,7 +12,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import jakarta.persistence.EntityManager;
-
+import jakarta.transaction.Transactional;
 import br.com.api.produtos.model.ProdutoModelo;
 import br.com.api.produtos.model.RespostaModelo;
 import br.com.api.produtos.model.UserModelo;
@@ -45,21 +46,41 @@ public class ProdutoServico {
         return produtos;
     }
     
-public ResponseEntity<?> editarProduto(long codigo, ProdutoModelo novoProduto) {
-    Optional<ProdutoModelo> produtoOptional = pr.findById(codigo);
+    @Transactional
+    public ResponseEntity<?> editarProduto(long codigo, ProdutoModelo novoProduto) {
+        Optional<ProdutoModelo> produtoOptional = pr.findById(codigo);
+    
+        if (produtoOptional.isPresent()) {
+            ProdutoModelo produtoExistente = produtoOptional.get();
+            produtoExistente.setNome(novoProduto.getNome());
+            produtoExistente.setDescricao(novoProduto.getDescricao());
+    
+            List<UserModelo> novosUsuarios = novoProduto.getUsuarios().stream()
+                .map(userModelo -> ur.findById(userModelo.getId())
+                    .orElseThrow(() -> new RuntimeException("Usuário não encontrado: " + userModelo.getId())))
+                .collect(Collectors.toList());
+    
+            // Remover usuários antigos utilizando o método removerProdutoDoUsuario
+            List<String> userIdsToRemove = produtoExistente.getUsuarios().stream()
+                .map(UserModelo::getId)
+                .collect(Collectors.toList());
 
-    if (produtoOptional.isPresent()) {
-        ProdutoModelo produtoExistente = produtoOptional.get();
-        produtoExistente.setNome(novoProduto.getNome());
-        produtoExistente.setDescricao(novoProduto.getDescricao());
-
-        return new ResponseEntity<>(pr.save(produtoExistente), HttpStatus.OK);
-    } else {
-        return new ResponseEntity<>("Produto não encontrado", HttpStatus.NOT_FOUND);
+            removerProdutoDoUsuario(String.valueOf(produtoExistente.getCodigo()), userIdsToRemove);
+    
+            // Adicionando os novos usuários ao produto
+            produtoExistente.setUsuarios(novosUsuarios);
+            for (UserModelo usuario : novosUsuarios) {
+                usuario.adicionarProduto(produtoExistente);
+                ur.save(usuario);
+            }
+    
+            pr.save(produtoExistente);
+            return new ResponseEntity<>(produtoExistente, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Produto não encontrado", HttpStatus.NOT_FOUND);
+        }
     }
-}
-
-
+    
 public ResponseEntity<?> cadastrarAlterar(ProdutoModelo pm, List<String> userIds, String acao) {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     if (authentication != null && authentication.isAuthenticated()) {
@@ -103,11 +124,13 @@ public ResponseEntity<?> cadastrarAlterar(ProdutoModelo pm, List<String> userIds
 
     public ResponseEntity<RespostaModelo> remover(long codigo){
 
+
         pr.deleteById(codigo);
 
         rm.setMensagem("O produto foi removido com sucesso!");
         return new ResponseEntity<RespostaModelo>(rm,HttpStatus.OK);
     }
+    
     public ResponseEntity<?> removerProdutoDoUsuario(String productId, List<String> userIds) {
         try {
             Optional<ProdutoModelo> produtoOptional = pr.findById(Long.parseLong(productId));
@@ -138,6 +161,7 @@ public ResponseEntity<?> cadastrarAlterar(ProdutoModelo pm, List<String> userIds
     }
     
 
+    
 }
 
 
