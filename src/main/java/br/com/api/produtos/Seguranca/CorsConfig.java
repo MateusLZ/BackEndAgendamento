@@ -16,6 +16,7 @@ public class CorsConfig {
         config.addAllowedOrigin("https://cabeloeart.vercel.app"); // Adicione o domínio do seu frontend
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
+        config.addExposedHeader("Content-Disposition");
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }
