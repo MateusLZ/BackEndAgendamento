@@ -1,0 +1,5 @@
+services:
+  - name: my-app
+    env: java
+    buildCommand: mvn package
+    startCommand: java -jar target/*.jar
