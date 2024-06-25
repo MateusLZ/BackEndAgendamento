@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://cabeloeart.vercel.app")
+@CrossOrigin(origins = "*")
 public class ApiController {
 
     @GetMapping("/dados")
