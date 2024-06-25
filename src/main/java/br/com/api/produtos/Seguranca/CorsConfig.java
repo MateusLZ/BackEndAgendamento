@@ -9,13 +9,13 @@ import org.springframework.web.filter.CorsFilter;
 @Configuration
 public class CorsConfig {
 
-    @Bean
+    @Bean 
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.addAllowedOrigin("https://cabeloeart.vercel.app"); // Adicione o domínio do seu frontend
         config.addAllowedHeader("*");
-        config.addAllowedMethod("*");
+        config.addAllowedMethod("*"); 
         config.addExposedHeader("Content-Disposition");
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
