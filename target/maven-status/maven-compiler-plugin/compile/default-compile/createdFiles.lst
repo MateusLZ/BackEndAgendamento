@@ -14,6 +14,7 @@ br\com\api\produtos\controle\ProdutoControle.class
 br\com\api\produtos\model\CadastrarProdutoRequest.class
 br\com\api\produtos\model\ProdutoModelo.class
 br\com\api\produtos\controle\HorarioControle.class
+br\com\api\produtos\model\SenhaDTO.class
 br\com\api\produtos\model\UserRole.class
 br\com\api\produtos\repositorio\HorarioRepositorio.class
 br\com\api\produtos\repositorio\UserRepositorio.class
