@@ -52,11 +52,9 @@ public class AutenticacaoControle {
     @PostMapping("/login")
 public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AutenticacaoDTO data) {
     logger.info("Recebido pedido de login para o usuário: {}", data.login());
-
     try {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
-
         UserModelo userModelo = (UserModelo) auth.getPrincipal();
         userModelo.setIsActive(true);
         logger.info("Usuário autenticado com sucesso: {}", userModelo.getUsername());
