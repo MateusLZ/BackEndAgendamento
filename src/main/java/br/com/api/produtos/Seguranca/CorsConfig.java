@@ -13,7 +13,7 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("https://cabeloeart.vercel.app"); 
+        config.addAllowedOrigin("*"); 
         config.addAllowedHeader("*");
         config.addAllowedMethod("*"); 
         config.addExposedHeader("Content-Disposition");
