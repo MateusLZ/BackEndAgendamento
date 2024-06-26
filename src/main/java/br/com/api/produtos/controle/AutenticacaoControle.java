@@ -3,6 +3,7 @@ package br.com.api.produtos.controle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -63,7 +64,12 @@ public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AutenticacaoDT
         var userName = userModelo.getUserName();
         var userRole = ((UserModelo) auth.getPrincipal()).getRole();
 
-        return ResponseEntity.ok(new LoginResponseDTO(token, userName, userRole));
+        HttpHeaders headers = new HttpHeaders();
+            headers.add("Content-Disposition", "attachment; filename=login_response.txt");
+
+            return ResponseEntity.ok()
+                                 .headers(headers)
+                                 .body(new LoginResponseDTO(token, userName, userRole));
     } catch (AuthenticationException e) {
         logger.error("Falha na autenticação para o usuário: {}", data.login());
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();

@@ -16,5 +16,5 @@ public class ApiController {
         return ResponseEntity.ok("Dados da API");
     }
 
-    // Outros métodos do controller
+
 }
