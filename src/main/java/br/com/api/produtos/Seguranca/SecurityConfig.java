@@ -29,7 +29,7 @@ public class SecurityConfig {
         System.out.println("Configurando filtro CORS Dentro do Security...");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("https://cabeloeart.vercel.app"); // Adicione o domínio do seu frontend
+        config.addAllowedOrigin("https://mateuslz.github.io"); // Adicione o domínio do seu frontend
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         config.addExposedHeader("Content-Disposition");
