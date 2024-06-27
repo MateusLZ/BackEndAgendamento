@@ -1,0 +1,80 @@
+{
+  "id": "d5d060c5-31b6-4268-b8b1-9eaa87cf5333",
+  "version": "2.0",
+  "name": "clickAgenda",
+  "url": "http://localhost:5173",
+  "tests": [{
+    "id": "9c9db313-a3f2-4a77-a1a3-cbaa44cf6d2e",
+    "name": "UsuarioExcluindoHR",
+    "commands": [{
+      "id": "fc49380a-f133-4099-b1d5-14b58ef1ae38",
+      "comment": "",
+      "command": "open",
+      "target": "/acesso-negado",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c886df4-36d3-4964-8ada-3350fef4ceb0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1456x876",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b8bb969-e8a0-43e7-b432-59cb14ee6383",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-salvar",
+      "targets": [
+        ["css=.btn-salvar", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f01f08ae-b46b-4863-a019-43c9d0c9f9cb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao-menu:nth-child(2) .string-botao:nth-child(2)",
+      "targets": [
+        ["css=.botao-menu:nth-child(2) .string-botao:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/ul/div[2]/li/p[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/li/p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Agendamentos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f5fe90a-034a-4630-b434-0e40049a3b42",
+      "comment": "",
+      "command": "click",
+      "target": "css=.agenda-container:nth-child(1) > .excluir-agendamento > img",
+      "targets": [
+        ["css=.agenda-container:nth-child(1) > .excluir-agendamento > img", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div[2]/div/div/div/div[2]/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d37f262-1faf-4b81-a27d-5b56def93c66",
+      "comment": "",
+      "command": "click",
+      "target": "css=.agenda-container:nth-child(2) > .excluir-agendamento > img",
+      "targets": [
+        ["css=.agenda-container:nth-child(2) > .excluir-agendamento > img", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b0e89220-d4af-4837-a6a5-48d4a399a0f9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9c9db313-a3f2-4a77-a1a3-cbaa44cf6d2e"]
+  }],
+  "urls": ["http://localhost:5173/"],
+  "plugins": []
+}

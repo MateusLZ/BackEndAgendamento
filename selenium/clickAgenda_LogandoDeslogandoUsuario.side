@@ -1,0 +1,121 @@
+{
+  "id": "f863e211-2224-4471-8cae-02c9fbc75846",
+  "version": "2.0",
+  "name": "clickAgenda",
+  "url": "http://localhost:5173",
+  "tests": [{
+    "id": "7c23686d-64f4-4bb1-8beb-73f0e592df49",
+    "name": "LogandoDeslogandoUsuario",
+    "commands": [{
+      "id": "c0562903-e5ec-44b9-99f4-8dc6be12a8c3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a030528-468d-4955-8aae-534398f7cc87",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1456x876",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7854eb6e-d399-43ec-9c4e-1cc5c4f1e16f",
+      "comment": "",
+      "command": "click",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.input-div:nth-child(1) > .input", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[3]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50d4709f-6ff3-4859-883b-8d4341f560d5",
+      "comment": "",
+      "command": "type",
+      "target": "name=login",
+      "targets": [
+        ["name=login", "name"],
+        ["css=.input-div:nth-child(1) > .input", "css:finder"],
+        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[3]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "henrique@gmail.com"
+    }, {
+      "id": "2d6bc583-d809-4c58-959b-98d606d62c3a",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-div:nth-child(2) > .input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[3]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "772ea6a3-7658-4fa2-a4c0-f413dfd5d6df",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.input-div:nth-child(2) > .input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[3]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "97519594-a948-46da-b1eb-9426c2d9220a",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Entrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4ecd70b-cfba-4d89-b737-0eee02d10bf2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cursor-pointer:nth-child(1) > path",
+      "targets": [
+        ["css=.cursor-pointer:nth-child(1) > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "99511800-ccca-4ff4-be34-0ed3198768c3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.logout-app",
+      "targets": [
+        ["css=.logout-app", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[3]/p", "xpath:idRelative"],
+        ["xpath=//div[3]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Sair da conta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1924398a-ee06-4b1c-b169-8a86cf5897d9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7c23686d-64f4-4bb1-8beb-73f0e592df49"]
+  }],
+  "urls": ["http://localhost:5173/"],
+  "plugins": []
+}

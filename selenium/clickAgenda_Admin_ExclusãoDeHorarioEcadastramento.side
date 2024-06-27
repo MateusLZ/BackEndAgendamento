@@ -1,0 +1,285 @@
+{
+  "id": "4196dd49-55ed-4892-9c45-19c7c1f41ff3",
+  "version": "2.0",
+  "name": "clickAgenda",
+  "url": "http://localhost:5173",
+  "tests": [{
+    "id": "f5a7a00c-a90e-408c-895f-6f113f15f192",
+    "name": "Admin_ExclusãoDeHorarioEcadastramento",
+    "commands": [{
+      "id": "46e10b19-503a-4f4d-b85b-88446e3d985c",
+      "comment": "",
+      "command": "open",
+      "target": "/acesso-negado",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "83c9726c-c62d-4abc-9df7-4436ace79e90",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1456x876",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1db9a430-dd72-490d-89fd-04a5e175e9fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-salvar",
+      "targets": [
+        ["css=.btn-salvar", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f568dda-66dc-41ed-8f2e-8d22a91b87f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao-menu:nth-child(4) .string-botao:nth-child(2)",
+      "targets": [
+        ["css=.botao-menu:nth-child(4) .string-botao:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/nav/ul/div[4]/li/p[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/li/p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Configurações')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c084f0c-e626-4fc6-82b8-6cc63d0096ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-navigation-config:nth-child(2) > p",
+      "targets": [
+        ["css=.btn-navigation-config:nth-child(2) > p", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div/ul/li[2]/p", "xpath:idRelative"],
+        ["xpath=//li[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Horários')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba76886a-7308-4bfd-b43f-4b2e865e730e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-cadastrar > svg",
+      "targets": [
+        ["css=.btn-cadastrar > svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5fe785a-fdbc-4588-a40c-bba7c9d74767",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-cadastrar path",
+      "targets": [
+        ["css=.btn-cadastrar path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "63e532f8-e29c-4b16-9e2f-3e85f6fb080d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-cadastrar path",
+      "targets": [
+        ["css=.btn-cadastrar path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "bcf1ddeb-a814-44e5-883e-b7c3efd9cd8d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-cadastrar > p",
+      "targets": [
+        ["css=.btn-cadastrar > p", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div[2]/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Cadastrar horário')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "56708e83-9eb6-42b6-bfa9-6497dcaf6958",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=demo-multiple-chip",
+      "targets": [
+        ["id=demo-multiple-chip", "id"],
+        ["css=#demo-multiple-chip", "css:finder"],
+        ["xpath=//div[@id='demo-multiple-chip']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/div[3]/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[3]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d22d6ee-576e-491a-91bd-7208beac6b9f",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fcad753-7305-40d8-928d-86d9676bdeb1",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97de80ab-7986-4912-bfa4-b1846c701a0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(2)", "css:finder"],
+        ["xpath=//ul[@id=':r1:']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "71ccf4fe-3c87-44b3-a7b9-6260ec8fd7cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58f92689-e8f2-4350-98fa-9ed02bd4d942",
+      "comment": "",
+      "command": "click",
+      "target": "css=.buttonPVermelho",
+      "targets": [
+        ["css=.buttonPVermelho", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/div[4]/p[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/p[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9730a04-2242-46ce-8400-c76e4007d50d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-cadastrar",
+      "targets": [
+        ["css=.btn-cadastrar", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div[2]/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "29132dcd-ef48-4c30-9d05-2e8c3c60caa0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-cadastrar > p",
+      "targets": [
+        ["css=.btn-cadastrar > p", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div[2]/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Cadastrar horário')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ac3e044-25c6-41cc-b470-8d15260b2feb",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=demo-multiple-chip",
+      "targets": [
+        ["id=demo-multiple-chip", "id"],
+        ["css=#demo-multiple-chip", "css:finder"],
+        ["xpath=//div[@id='demo-multiple-chip']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/div[3]/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[3]/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f03bee4-72e4-4f93-93c1-ec0539e0af95",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "421904c0-430d-4164-89e1-a5ea8fecfa52",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3eb07e6-01e4-41fd-a02c-7e33a776e4c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(4)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(4)", "css:finder"],
+        ["xpath=//ul[@id=':r3:']/li[4]", "xpath:idRelative"],
+        ["xpath=//div[3]/ul/li[4]", "xpath:position"],
+        ["xpath=//li[contains(.,'11:00:00')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "71ca6c2f-4272-4eb0-b222-51d169fd7a2c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fec1558d-143d-415b-90ae-48e8b85f1679",
+      "comment": "",
+      "command": "click",
+      "target": "css=.buttonPVermelho",
+      "targets": [
+        ["css=.buttonPVermelho", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/div[4]/p[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/p[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9d6311c-9f07-48fd-b866-5b02c4856008",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(6) svg",
+      "targets": [
+        ["css=li:nth-child(6) svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "74d0201d-0eb8-4d09-8d3d-d72a5285fdca",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(1) svg",
+      "targets": [
+        ["css=li:nth-child(1) svg", "css:finder"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "65f59f7d-7e8e-465e-8fa9-a6777ba173f9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f5a7a00c-a90e-408c-895f-6f113f15f192"]
+  }],
+  "urls": ["http://localhost:5173/"],
+  "plugins": []
+}

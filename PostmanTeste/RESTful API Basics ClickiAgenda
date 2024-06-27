@@ -1,0 +1,1336 @@
+{
+	"info": {
+		"_postman_id": "9a3f4d0a-4d66-4dd3-aa3b-e2ded77e68da",
+		"name": "RESTful API Basics #blueprint",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these request types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT and PATCH requests.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a variable called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more scripts in \"Tests\" to verify if the API works as expected and execute flows.\n    \n\n## ℹ️ Resources\n\n[Building requests](https://learning.postman.com/docs/sending-requests/requests/)  \n[Authorizing requests](https://learning.postman.com/docs/sending-requests/authorization/)  \n[Using variables](https://learning.postman.com/docs/sending-requests/variables/)  \n[Managing environments](https://learning.postman.com/docs/sending-requests/managing-environments/)  \n[Writing scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33302347"
+	},
+	"item": [
+		{
+			"name": "adminControle",
+			"item": [
+				{
+					"name": "listarPorRole",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNTc1MTh9.ImZSiVd2MubMi87t_dDbQwmSaKTfiUWMOdTcR5CWSGM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/admin/listarPorRole/FUNCIONARIO",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"listarPorRole",
+								"FUNCIONARIO"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://backendagendamento.onrender.com/admin/listarPorRole/FUNCIONARIO",
+									"protocol": "https",
+									"host": [
+										"backendagendamento",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"admin",
+										"listarPorRole",
+										"FUNCIONARIO"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jun 2024 18:20:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8996f8ba080b01a0-GRU"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "8994f60e-a9f4-4155"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"id\": \"a531510f-04b4-4711-92bc-939989ff9846\",\n            \"login\": \"gustavo@gmail.com\",\n            \"userName\": \"Gustavo Nunes\",\n            \"password\": \"$2a$10$anG/8a.nctw7yl8KFYyIG.XjiOg9Oj71.uaK59rAQdgXG77p0Z7Ye\",\n            \"phone\": null,\n            \"role\": \"FUNCIONARIO\",\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Imd1c3Rhdm9AZ21haWwuY29tIiwiZXhwIjoxNzE5MzU3NTA3fQ.T-y-g8Ks5yWeUMzaiJ3IkoJigC1Ec_q7h4FlEIN2pHA\",\n            \"produtos\": [\n                {\n                    \"codigo\": 1,\n                    \"nome\": \"Cabelo\",\n                    \"descricao\": \"Renove seu visual com cortes modernos e estilosos, feitos por nossos experientes e talentosos cabeleireiros.\",\n                    \"nomeImagem\": \"images/Pexels Photo by Chloe.png\"\n                },\n                {\n                    \"codigo\": 4,\n                    \"nome\": \"Coloração\",\n                    \"descricao\": \"Revitalize seu cabelo com nossas colorações, elevando sua aparência com tons deslumbrantes e duradouros.\",\n                    \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (1).png\"\n                },\n                {\n                    \"codigo\": 5,\n                    \"nome\": \"Tratamentos\",\n                    \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                    \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n                },\n                {\n                    \"codigo\": 6,\n                    \"nome\": \"Manicure\",\n                    \"descricao\": \" Mime-se com tratamentos luxuosos para mãos e pés, incluindo manicures impecáveis e pedicures relaxantes\",\n                    \"nomeImagem\": \"images/f691d9cc1da6b59ba836e4361f50225f.jpg\"\n                },\n                {\n                    \"codigo\": 7,\n                    \"nome\": \"Sobrancelha\",\n                    \"descricao\": \"   Acentue o design de suas sombrancelhas, realçando seus traços para um olhar impecável e elegante\",\n                    \"nomeImagem\": \"images/f4786c22cc1aa11c6eeb043ddb7f2a78.jpg\"\n                }\n            ],\n            \"active\": true,\n            \"enabled\": true,\n            \"accountNonLocked\": true,\n            \"accountNonExpired\": true,\n            \"credentialsNonExpired\": true,\n            \"username\": \"gustavo@gmail.com\",\n            \"authorities\": [\n                {\n                    \"authority\": \"ROLE_FUNCIONARIO\"\n                },\n                {\n                    \"authority\": \"ROLE_USER\"\n                }\n            ]\n        },\n        {\n            \"id\": \"fa207cba-bc4f-4d95-841f-808880b278b3\",\n            \"login\": \"JussaraNunes@gmail.com\",\n            \"userName\": \"Jussara Nunes\",\n            \"password\": \"$2a$10$lg7UuiJeMNPQwPpa6IhnseLqqFhSKSYNGTvVTclRLGPMX.XbVoRui\",\n            \"phone\": null,\n            \"role\": \"FUNCIONARIO\",\n            \"token\": \"$2a$10$lg7UuiJeMNPQwPpa6IhnseLqqFhSKSYNGTvVTclRLGPMX.XbVoRui\",\n            \"produtos\": [\n                {\n                    \"codigo\": 1,\n                    \"nome\": \"Cabelo\",\n                    \"descricao\": \"Renove seu visual com cortes modernos e estilosos, feitos por nossos experientes e talentosos cabeleireiros.\",\n                    \"nomeImagem\": \"images/Pexels Photo by Chloe.png\"\n                },\n                {\n                    \"codigo\": 5,\n                    \"nome\": \"Tratamentos\",\n                    \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                    \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n                }\n            ],\n            \"active\": false,\n            \"enabled\": true,\n            \"accountNonLocked\": true,\n            \"accountNonExpired\": true,\n            \"credentialsNonExpired\": true,\n            \"username\": \"JussaraNunes@gmail.com\",\n            \"authorities\": [\n                {\n                    \"authority\": \"ROLE_FUNCIONARIO\"\n                },\n                {\n                    \"authority\": \"ROLE_USER\"\n                }\n            ]\n        },\n        {\n            \"id\": \"aa8e9622-6af3-4433-9f3a-67261e5f595a\",\n            \"login\": \"MariaTavares@gmail.com\",\n            \"userName\": \"Maria Tavares\",\n            \"password\": \"$2a$10$rxLX2mWZ1oV/UFHAXtqik.fm6jz2R1tQBIwOxYThaaPmsigvHU3ti\",\n            \"phone\": null,\n            \"role\": \"FUNCIONARIO\",\n            \"token\": \"$2a$10$rxLX2mWZ1oV/UFHAXtqik.fm6jz2R1tQBIwOxYThaaPmsigvHU3ti\",\n            \"produtos\": [\n                {\n                    \"codigo\": 6,\n                    \"nome\": \"Manicure\",\n                    \"descricao\": \" Mime-se com tratamentos luxuosos para mãos e pés, incluindo manicures impecáveis e pedicures relaxantes\",\n                    \"nomeImagem\": \"images/f691d9cc1da6b59ba836e4361f50225f.jpg\"\n                }\n            ],\n            \"active\": false,\n            \"enabled\": true,\n            \"accountNonLocked\": true,\n            \"accountNonExpired\": true,\n            \"credentialsNonExpired\": true,\n            \"username\": \"MariaTavares@gmail.com\",\n            \"authorities\": [\n                {\n                    \"authority\": \"ROLE_FUNCIONARIO\"\n                },\n                {\n                    \"authority\": \"ROLE_USER\"\n                }\n            ]\n        },\n        {\n            \"id\": \"91f5674a-6048-4355-b531-15588158b230\",\n            \"login\": \"OtavioFarias@gmail.com\",\n            \"userName\": \"Otavio Farias\",\n            \"password\": \"$2a$10$h1xya5T3G5/OA2uzE7B/KeDJd0En/g/kITFuPqmP1NZxG7Xo4JDuu\",\n            \"phone\": null,\n            \"role\": \"FUNCIONARIO\",\n            \"token\": \"$2a$10$h1xya5T3G5/OA2uzE7B/KeDJd0En/g/kITFuPqmP1NZxG7Xo4JDuu\",\n            \"produtos\": [\n                {\n                    \"codigo\": 1,\n                    \"nome\": \"Cabelo\",\n                    \"descricao\": \"Renove seu visual com cortes modernos e estilosos, feitos por nossos experientes e talentosos cabeleireiros.\",\n                    \"nomeImagem\": \"images/Pexels Photo by Chloe.png\"\n                },\n                {\n                    \"codigo\": 4,\n                    \"nome\": \"Coloração\",\n                    \"descricao\": \"Revitalize seu cabelo com nossas colorações, elevando sua aparência com tons deslumbrantes e duradouros.\",\n                    \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (1).png\"\n                },\n                {\n                    \"codigo\": 5,\n                    \"nome\": \"Tratamentos\",\n                    \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                    \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n                },\n                {\n                    \"codigo\": 7,\n                    \"nome\": \"Sobrancelha\",\n                    \"descricao\": \"   Acentue o design de suas sombrancelhas, realçando seus traços para um olhar impecável e elegante\",\n                    \"nomeImagem\": \"images/f4786c22cc1aa11c6eeb043ddb7f2a78.jpg\"\n                }\n            ],\n            \"active\": false,\n            \"enabled\": true,\n            \"accountNonLocked\": true,\n            \"accountNonExpired\": true,\n            \"credentialsNonExpired\": true,\n            \"username\": \"OtavioFarias@gmail.com\",\n            \"authorities\": [\n                {\n                    \"authority\": \"ROLE_FUNCIONARIO\"\n                },\n                {\n                    \"authority\": \"ROLE_USER\"\n                }\n            ]\n        },\n        {\n            \"id\": \"778785d4-0838-47b3-b6f9-85cca7c26cda\",\n            \"login\": \"HeloisaAlmeida@gmail.com\",\n            \"userName\": \"Heloisa Almeida\",\n            \"password\": \"$2a$10$Tru.VxUdUn.kXDhSCP6awO3JwTmK6Doa/iMI93R9ZMkXRJNN/Mls.\",\n            \"phone\": null,\n            \"role\": \"FUNCIONARIO\",\n            \"token\": \"$2a$10$Tru.VxUdUn.kXDhSCP6awO3JwTmK6Doa/iMI93R9ZMkXRJNN/Mls.\",\n            \"produtos\": [\n                {\n                    \"codigo\": 5,\n                    \"nome\": \"Tratamentos\",\n                    \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                    \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n                }\n            ],\n            \"active\": false,\n            \"enabled\": true,\n            \"accountNonLocked\": true,\n            \"accountNonExpired\": true,\n            \"credentialsNonExpired\": true,\n            \"username\": \"HeloisaAlmeida@gmail.com\",\n            \"authorities\": [\n                {\n                    \"authority\": \"ROLE_FUNCIONARIO\"\n                },\n                {\n                    \"authority\": \"ROLE_USER\"\n                }\n            ]\n        },\n        {\n            \"id\": \"4974d6aa-7838-4206-846c-38568e3847e5\",\n            \"login\": \"AnaSouza@gmail.com\",\n            \"userName\": \"Ana Souza\",\n            \"password\": \"$2a$10$A14RzSphPb7hslWt9KQe9upm72cgZCBoXTtr5MemyNR.1biGyzrNy\",\n            \"phone\": null,\n            \"role\": \"FUNCIONARIO\",\n            \"token\": \"$2a$10$A14RzSphPb7hslWt9KQe9upm72cgZCBoXTtr5MemyNR.1biGyzrNy\",\n            \"produtos\": [\n                {\n                    \"codigo\": 4,\n                    \"nome\": \"Coloração\",\n                    \"descricao\": \"Revitalize seu cabelo com nossas colorações, elevando sua aparência com tons deslumbrantes e duradouros.\",\n                    \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (1).png\"\n                },\n                {\n                    \"codigo\": 6,\n                    \"nome\": \"Manicure\",\n                    \"descricao\": \" Mime-se com tratamentos luxuosos para mãos e pés, incluindo manicures impecáveis e pedicures relaxantes\",\n                    \"nomeImagem\": \"images/f691d9cc1da6b59ba836e4361f50225f.jpg\"\n                }\n            ],\n            \"active\": false,\n            \"enabled\": true,\n            \"accountNonLocked\": true,\n            \"accountNonExpired\": true,\n            \"credentialsNonExpired\": true,\n            \"username\": \"AnaSouza@gmail.com\",\n            \"authorities\": [\n                {\n                    \"authority\": \"ROLE_FUNCIONARIO\"\n                },\n                {\n                    \"authority\": \"ROLE_USER\"\n                }\n            ]\n        },\n        {\n            \"id\": \"6044739a-9d8e-4316-9e01-bc5d6ee7ae3c\",\n            \"login\": \"LuisaFagundes@gmail.com\",\n            \"userName\": \"Luisa Fagundes\",\n            \"password\": \"$2a$10$j1dhrpxTokrUY9lpmwfiR.2p02His9Lg9yXI4Ic9BN.1orXRUYlse\",\n            \"phone\": null,\n            \"role\": \"FUNCIONARIO\",\n            \"token\": \"$2a$10$j1dhrpxTokrUY9lpmwfiR.2p02His9Lg9yXI4Ic9BN.1orXRUYlse\",\n            \"produtos\": [\n                {\n                    \"codigo\": 5,\n                    \"nome\": \"Tratamentos\",\n                    \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                    \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n                }\n            ],\n            \"active\": false,\n            \"enabled\": true,\n            \"accountNonLocked\": true,\n            \"accountNonExpired\": true,\n            \"credentialsNonExpired\": true,\n            \"username\": \"LuisaFagundes@gmail.com\",\n            \"authorities\": [\n                {\n                    \"authority\": \"ROLE_FUNCIONARIO\"\n                },\n                {\n                    \"authority\": \"ROLE_USER\"\n                }\n            ]\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 8,\n        \"sort\": {\n            \"empty\": true,\n            \"unsorted\": true,\n            \"sorted\": false\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"totalPages\": 1,\n    \"totalElements\": 7,\n    \"last\": true,\n    \"size\": 8,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"unsorted\": true,\n        \"sorted\": false\n    },\n    \"numberOfElements\": 7,\n    \"first\": true,\n    \"empty\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "lista",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNTQ3NDh9.xUld9zB-s6DjC5A96czDQRYMmLEAnDW-XPANzsdJxcY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dataHora\":\"17:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/admin/listar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"listar"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": [
+						{
+							"name": "Post data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dataHora\":\"17:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://backendagendamento.onrender.com/admin/listar",
+									"protocol": "https",
+									"host": [
+										"backendagendamento",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"admin",
+										"listar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jun 2024 17:43:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8996c34829b96297-GRU"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "a844aadd-f4b8-4ff9"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"a531510f-04b4-4711-92bc-939989ff9846\",\n        \"login\": \"gustavo@gmail.com\",\n        \"userName\": \"Gustavo Nunes\",\n        \"password\": \"$2a$10$anG/8a.nctw7yl8KFYyIG.XjiOg9Oj71.uaK59rAQdgXG77p0Z7Ye\",\n        \"phone\": null,\n        \"role\": \"FUNCIONARIO\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Imd1c3Rhdm9AZ21haWwuY29tIiwiZXhwIjoxNzE5MzU0ODUxfQ.pti25IZutHoqQBvM5yL-mV4m_GXg_1wjcsqnQfrX6Ls\",\n        \"produtos\": [\n            {\n                \"codigo\": 1,\n                \"nome\": \"Cabelo\",\n                \"descricao\": \"Renove seu visual com cortes modernos e estilosos, feitos por nossos experientes e talentosos cabeleireiros.\",\n                \"nomeImagem\": \"images/Pexels Photo by Chloe.png\"\n            },\n            {\n                \"codigo\": 4,\n                \"nome\": \"Coloração\",\n                \"descricao\": \"Revitalize seu cabelo com nossas colorações, elevando sua aparência com tons deslumbrantes e duradouros.\",\n                \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (1).png\"\n            },\n            {\n                \"codigo\": 5,\n                \"nome\": \"Tratamentos\",\n                \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n            },\n            {\n                \"codigo\": 6,\n                \"nome\": \"Manicure\",\n                \"descricao\": \" Mime-se com tratamentos luxuosos para mãos e pés, incluindo manicures impecáveis e pedicures relaxantes\",\n                \"nomeImagem\": \"images/f691d9cc1da6b59ba836e4361f50225f.jpg\"\n            },\n            {\n                \"codigo\": 7,\n                \"nome\": \"Sobrancelha\",\n                \"descricao\": \"   Acentue o design de suas sombrancelhas, realçando seus traços para um olhar impecável e elegante\",\n                \"nomeImagem\": \"images/f4786c22cc1aa11c6eeb043ddb7f2a78.jpg\"\n            }\n        ],\n        \"active\": true,\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"username\": \"gustavo@gmail.com\",\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"ROLE_FUNCIONARIO\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id\": \"fa207cba-bc4f-4d95-841f-808880b278b3\",\n        \"login\": \"JussaraNunes@gmail.com\",\n        \"userName\": \"Jussara Nunes\",\n        \"password\": \"$2a$10$lg7UuiJeMNPQwPpa6IhnseLqqFhSKSYNGTvVTclRLGPMX.XbVoRui\",\n        \"phone\": null,\n        \"role\": \"FUNCIONARIO\",\n        \"token\": \"$2a$10$lg7UuiJeMNPQwPpa6IhnseLqqFhSKSYNGTvVTclRLGPMX.XbVoRui\",\n        \"produtos\": [\n            {\n                \"codigo\": 1,\n                \"nome\": \"Cabelo\",\n                \"descricao\": \"Renove seu visual com cortes modernos e estilosos, feitos por nossos experientes e talentosos cabeleireiros.\",\n                \"nomeImagem\": \"images/Pexels Photo by Chloe.png\"\n            },\n            {\n                \"codigo\": 5,\n                \"nome\": \"Tratamentos\",\n                \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n            }\n        ],\n        \"active\": false,\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"username\": \"JussaraNunes@gmail.com\",\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"ROLE_FUNCIONARIO\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id\": \"aa8e9622-6af3-4433-9f3a-67261e5f595a\",\n        \"login\": \"MariaTavares@gmail.com\",\n        \"userName\": \"Maria Tavares\",\n        \"password\": \"$2a$10$rxLX2mWZ1oV/UFHAXtqik.fm6jz2R1tQBIwOxYThaaPmsigvHU3ti\",\n        \"phone\": null,\n        \"role\": \"FUNCIONARIO\",\n        \"token\": \"$2a$10$rxLX2mWZ1oV/UFHAXtqik.fm6jz2R1tQBIwOxYThaaPmsigvHU3ti\",\n        \"produtos\": [\n            {\n                \"codigo\": 6,\n                \"nome\": \"Manicure\",\n                \"descricao\": \" Mime-se com tratamentos luxuosos para mãos e pés, incluindo manicures impecáveis e pedicures relaxantes\",\n                \"nomeImagem\": \"images/f691d9cc1da6b59ba836e4361f50225f.jpg\"\n            }\n        ],\n        \"active\": false,\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"username\": \"MariaTavares@gmail.com\",\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"ROLE_FUNCIONARIO\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id\": \"91f5674a-6048-4355-b531-15588158b230\",\n        \"login\": \"OtavioFarias@gmail.com\",\n        \"userName\": \"Otavio Farias\",\n        \"password\": \"$2a$10$h1xya5T3G5/OA2uzE7B/KeDJd0En/g/kITFuPqmP1NZxG7Xo4JDuu\",\n        \"phone\": null,\n        \"role\": \"FUNCIONARIO\",\n        \"token\": \"$2a$10$h1xya5T3G5/OA2uzE7B/KeDJd0En/g/kITFuPqmP1NZxG7Xo4JDuu\",\n        \"produtos\": [\n            {\n                \"codigo\": 1,\n                \"nome\": \"Cabelo\",\n                \"descricao\": \"Renove seu visual com cortes modernos e estilosos, feitos por nossos experientes e talentosos cabeleireiros.\",\n                \"nomeImagem\": \"images/Pexels Photo by Chloe.png\"\n            },\n            {\n                \"codigo\": 4,\n                \"nome\": \"Coloração\",\n                \"descricao\": \"Revitalize seu cabelo com nossas colorações, elevando sua aparência com tons deslumbrantes e duradouros.\",\n                \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (1).png\"\n            },\n            {\n                \"codigo\": 5,\n                \"nome\": \"Tratamentos\",\n                \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n            },\n            {\n                \"codigo\": 7,\n                \"nome\": \"Sobrancelha\",\n                \"descricao\": \"   Acentue o design de suas sombrancelhas, realçando seus traços para um olhar impecável e elegante\",\n                \"nomeImagem\": \"images/f4786c22cc1aa11c6eeb043ddb7f2a78.jpg\"\n            }\n        ],\n        \"active\": false,\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"username\": \"OtavioFarias@gmail.com\",\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"ROLE_FUNCIONARIO\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id\": \"778785d4-0838-47b3-b6f9-85cca7c26cda\",\n        \"login\": \"HeloisaAlmeida@gmail.com\",\n        \"userName\": \"Heloisa Almeida\",\n        \"password\": \"$2a$10$Tru.VxUdUn.kXDhSCP6awO3JwTmK6Doa/iMI93R9ZMkXRJNN/Mls.\",\n        \"phone\": null,\n        \"role\": \"FUNCIONARIO\",\n        \"token\": \"$2a$10$Tru.VxUdUn.kXDhSCP6awO3JwTmK6Doa/iMI93R9ZMkXRJNN/Mls.\",\n        \"produtos\": [\n            {\n                \"codigo\": 5,\n                \"nome\": \"Tratamentos\",\n                \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n            }\n        ],\n        \"active\": false,\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"username\": \"HeloisaAlmeida@gmail.com\",\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"ROLE_FUNCIONARIO\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id\": \"4974d6aa-7838-4206-846c-38568e3847e5\",\n        \"login\": \"AnaSouza@gmail.com\",\n        \"userName\": \"Ana Souza\",\n        \"password\": \"$2a$10$A14RzSphPb7hslWt9KQe9upm72cgZCBoXTtr5MemyNR.1biGyzrNy\",\n        \"phone\": null,\n        \"role\": \"FUNCIONARIO\",\n        \"token\": \"$2a$10$A14RzSphPb7hslWt9KQe9upm72cgZCBoXTtr5MemyNR.1biGyzrNy\",\n        \"produtos\": [\n            {\n                \"codigo\": 4,\n                \"nome\": \"Coloração\",\n                \"descricao\": \"Revitalize seu cabelo com nossas colorações, elevando sua aparência com tons deslumbrantes e duradouros.\",\n                \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (1).png\"\n            },\n            {\n                \"codigo\": 6,\n                \"nome\": \"Manicure\",\n                \"descricao\": \" Mime-se com tratamentos luxuosos para mãos e pés, incluindo manicures impecáveis e pedicures relaxantes\",\n                \"nomeImagem\": \"images/f691d9cc1da6b59ba836e4361f50225f.jpg\"\n            }\n        ],\n        \"active\": false,\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"username\": \"AnaSouza@gmail.com\",\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"ROLE_FUNCIONARIO\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id\": \"6044739a-9d8e-4316-9e01-bc5d6ee7ae3c\",\n        \"login\": \"LuisaFagundes@gmail.com\",\n        \"userName\": \"Luisa Fagundes\",\n        \"password\": \"$2a$10$j1dhrpxTokrUY9lpmwfiR.2p02His9Lg9yXI4Ic9BN.1orXRUYlse\",\n        \"phone\": null,\n        \"role\": \"FUNCIONARIO\",\n        \"token\": \"$2a$10$j1dhrpxTokrUY9lpmwfiR.2p02His9Lg9yXI4Ic9BN.1orXRUYlse\",\n        \"produtos\": [\n            {\n                \"codigo\": 5,\n                \"nome\": \"Tratamentos\",\n                \"descricao\": \"Cuide da saúde e vitalidade dos seus cabelos com uma variedade de tratamentos especializados.\",\n                \"nomeImagem\": \"images/Pexels Photo by cottonbro studio (2).png\"\n            }\n        ],\n        \"active\": false,\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"username\": \"LuisaFagundes@gmail.com\",\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"ROLE_FUNCIONARIO\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id\": \"efd5b4c1-993a-4587-9779-017cbb5f65f1\",\n        \"login\": \"bianca@gmail.com\",\n        \"userName\": \"bianca\",\n        \"password\": \"$2a$10$JL8zPSOJ16HJRo3wRtJlue3XVUTjQHT4CJZvuQfXjiXRa3YagC8zm\",\n        \"phone\": \"48 999921809\",\n        \"role\": \"USER\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImJpYW5jYUBnbWFpbC5jb20iLCJleHAiOjE3MTkzMTYwNzJ9.TkxS37UjqogGPMvV-xklXETxVQ8L2yPT98EQ5OWvQIU\",\n        \"produtos\": [],\n        \"active\": true,\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"username\": \"bianca@gmail.com\",\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id\": \"ac5b0829-9204-4810-9040-3789158dd943\",\n        \"login\": \"mateus@gmail.com\",\n        \"userName\": \"mateus\",\n        \"password\": \"$2a$10$j9xaLUEQp7oqc5OCDChziuup23GFY2myCAhX9/4/kYtOD/TR6rBVy\",\n        \"phone\": \"48 999921809\",\n        \"role\": \"ADMIN\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNTQ4MjV9.SlZhyxJBGAkelUI3g2Btp8NWB8uY3lU3zny0BE5yXRA\",\n        \"produtos\": [],\n        \"active\": true,\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"username\": \"mateus@gmail.com\",\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"ROLE_ADMIN\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            },\n            {\n                \"authority\": \"ROLE_FUNCIONARIO\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "USERDATA",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Imd1c3Rhdm9AZ21haWwuY29tIiwiZXhwIjoxNzE5MzU4MTc0fQ.puhgnIdwNfGaotiCgVQz8RQCChzchW-o93VxiaIY2G4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/admin/userData",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"admin",
+								"userData"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "autenticação",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"login\": \"mateus@gmail.com\",\r\n\"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/auth/login",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"login\": \"mateus@gmail.com\",\r\n\"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://backendagendamento.onrender.com/auth/login",
+									"protocol": "https",
+									"host": [
+										"backendagendamento",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jun 2024 18:18:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "8996f61198ab01a0-GRU"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "2b25c1ff-d89d-42c8"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNTc1MTh9.ImZSiVd2MubMi87t_dDbQwmSaKTfiUWMOdTcR5CWSGM\",\n    \"userName\": \"mateus\",\n    \"role\": \"ADMIN\"\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjI1MjN9.Cd7PesDX4dCACxmAWvx0gB271xhvtJ1oRQElmBJQ2Hk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/auth/logout",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjI1MjN9.Cd7PesDX4dCACxmAWvx0gB271xhvtJ1oRQElmBJQ2Hk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"teste@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"userName\":\"teste\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/auth/registrar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6InRlc3RlQGdtYWlsLmNvbSIsImV4cCI6MTcxOTM2MzE2OX0.W2M_EpFESoI4bgowAIlr8eKn6Mc1fj9kpss2Yr0Rqic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"teste@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"userName\":\"teste\",\r\n    \"phone\": \"4899881920\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/auth/editar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarSenha",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6InRlc3RlQGdtYWlsLmNvbSIsImV4cCI6MTcxOTM2MzE2OX0.W2M_EpFESoI4bgowAIlr8eKn6Mc1fj9kpss2Yr0Rqic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senhaAtual\":\"1234\",\r\n    \"novaSenha\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/auth/editar/senha",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"editar",
+								"senha"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjM0NDh9.8BvVjV09L3xhVan1OuGiczAoVvWyrEBJTNN8AgX7wUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/auth/excluir/91f5674a-6048-4355-b531-15588158b230",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"excluir",
+								"91f5674a-6048-4355-b531-15588158b230"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuarioSememail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"password\":\"1234\",\r\n\"userName\":\"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/auth/registrar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "semSenha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"login\": \"teste@gmail.com\",\r\n\r\n\"userName\":\"teste\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/auth/registrar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "semNome",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdm/semEmail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Imd1c3Rhdm9AZ21haWwuY29tIiwiZXhwIjoxNzE5NDUzNTA2fQ.pLwMYCmRrGvkIHWS79OP1eGpBv9k3fryqqYNqo-fBEA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/auth/login",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agendamento",
+			"item": [
+				{
+					"name": "Listardata",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNTkwNDd9.kwAFK3vfqzxpQTzs16Saqk-2mAVRmcdudng0T9RDUyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/agendamentos/listarPorData/250624",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"agendamentos",
+								"listarPorData",
+								"250624"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNTkwNDd9.kwAFK3vfqzxpQTzs16Saqk-2mAVRmcdudng0T9RDUyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuario\": {\r\n    \"id\": \"efd5b4c1-993a-4587-9779-017cbb5f65f1\"\r\n  },\r\n  \"produto\": {\r\n    \"codigo\": \"1\"\r\n  },\r\n  \"horario\": {\r\n    \"id\": \"6\"\r\n  },\r\n  \"funcionario\": {\r\n    \"id\": \"a531510f-04b4-4711-92bc-939989ff9846\"\r\n  },\r\n  \"dataAgendamento\": \"250624\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/agendamentos/cadastrar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"agendamentos",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListaPorUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNTkwNDd9.kwAFK3vfqzxpQTzs16Saqk-2mAVRmcdudng0T9RDUyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/agendamentos/listarPorUsuario/efd5b4c1-993a-4587-9779-017cbb5f65f1",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"agendamentos",
+								"listarPorUsuario",
+								"efd5b4c1-993a-4587-9779-017cbb5f65f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNTkwNDd9.kwAFK3vfqzxpQTzs16Saqk-2mAVRmcdudng0T9RDUyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/agendamentos/remover/5",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"agendamentos",
+								"remover",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNTkwNDd9.kwAFK3vfqzxpQTzs16Saqk-2mAVRmcdudng0T9RDUyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"produto\":{\r\n        \"nome\":\"Produto Teste\",\r\n        \"descricao\": \"Descrição do produto teste\",\r\n        \"nomeImagem\": \"images/pixels photo by chloe.png\"\r\n    },\r\n     \r\n    \"userIds\":[\"a531510f-04b4-4711-92bc-939989ff9846\"\r\n\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/cadastrar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjI1MjN9.Cd7PesDX4dCACxmAWvx0gB271xhvtJ1oRQElmBJQ2Hk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjE3MzZ9.7iDrzZMjTXoC_NqkYjM_QYroVGUr4U-zumbBMEEN9-E",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userIds\":[\"778785d4-0838-47b3-b6f9-85cca7c26cda\"]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/remover/11/usuarios",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"remover",
+								"11",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listarPr",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjM0NDh9.8BvVjV09L3xhVan1OuGiczAoVvWyrEBJTNN8AgX7wUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/listar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjM0NDh9.8BvVjV09L3xhVan1OuGiczAoVvWyrEBJTNN8AgX7wUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"mudado\",\r\n    \"descricao\":\"toptop\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/editar/7",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"editar",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Horario",
+			"item": [
+				{
+					"name": "remover",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjA2OTZ9.APzRLwuxNnSX9bOcdQWbWfSjX3Q1De-2QWOEqwb1lZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/horarios/remover/24",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"horarios",
+								"remover",
+								"24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ativar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/horarios/ativar/17",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"horarios",
+								"ativar",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "desativar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjA2OTZ9.APzRLwuxNnSX9bOcdQWbWfSjX3Q1De-2QWOEqwb1lZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/horarios/desativar/17",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"horarios",
+								"desativar",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjA2OTZ9.APzRLwuxNnSX9bOcdQWbWfSjX3Q1De-2QWOEqwb1lZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataHora\": \"00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/horarios/cadastrar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"horarios",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjA2OTZ9.APzRLwuxNnSX9bOcdQWbWfSjX3Q1De-2QWOEqwb1lZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/horarios/listar",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"horarios",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listaAtivos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6Im1hdGV1c0BnbWFpbC5jb20iLCJleHAiOjE3MTkzNjA2OTZ9.APzRLwuxNnSX9bOcdQWbWfSjX3Q1De-2QWOEqwb1lZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backendagendamento.onrender.com/horarios/ativos",
+							"protocol": "https",
+							"host": [
+								"backendagendamento",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"horarios",
+								"ativos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
